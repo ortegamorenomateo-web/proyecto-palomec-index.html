@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Autobiografía - Alejandra Jiménez</title>
+    
+    <style>
+        /* CONFIGURACIÓN DE COLORES NEÓN */
+        :root {
+            --neon-purple: #bc13fe;
+            --dark-purple: #7a0bc0;
+            --deep-bg: #0d0d0d;
+            --card-bg: #161616;
+            --text-white: #f5f5f5;
+        }
+
+        body {
+            background-color: var(--deep-bg);
+            color: var(--text-white);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .neon-title {
+            font-size: 3.5rem;
+            color: var(--neon-purple);
+            text-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--dark-purple);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* NAVEGACIÓN TIPO PESTAÑAS / SLIDES */
+        .tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            border: 2px solid var(--dark-purple);
+            border-radius: 50px;
+            padding: 8px;
+            margin-bottom: 40px;
+            background: rgba(26, 26, 26, 0.8);
+            box-shadow: 0 0 15px rgba(122, 11, 192, 0.2);
+        }
+
+        .tab-button {
+            background: transparent;
+            border: none;
+            color: #bbb;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button:hover {
+            color: var(--neon-purple);
+            text-shadow: 0 0 5px var(--neon-purple);
+        }
+
+        .tab-button.active {
+            background: var(--neon-purple);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-purple);
+        }
+
+        /* TARJETAS DE CONTENIDO (ESTILO DIAPOSITIVA) */
+        .card {
+            background: var(--card-bg);
+            border: 2px solid var(--neon-purple);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: inset 0 0 15px rgba(188, 19, 254, 0.1), 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px var(--neon-purple);
+        }
+
+        h2 {
+            color: var(--neon-purple);
+            border-bottom: 1px solid var(--dark-purple);
+            padding-bottom: 10px;
+            margin-top: 0;
+            text-shadow: 0 0 5px var(--dark-purple);
+        }
+
+        p, li {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--neon-purple);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li::before {
+            content: "✦ ";
+            color: var(--neon-purple);
+        }
+
+        /* CONTROL DE VISIBILIDAD CON ANIMACIÓN */
+        .tab-content {
+            display: none;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .neon-title { font-size: 2rem; }
+            .tabs-nav { border-radius: 20px; }
+            .tab-button { padding: 8px 15px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1 class="neon-title">Autobiografía</h1>
+            <p class="subtitle">Alejandra Jiménez | Presentación Personal</p>
+        </header>
+
+        <nav class="tabs-nav">
+            <button class="tab-button active" data-tab="inicio">Sobre Mí</button>
+            <button class="tab-button" data-tab="pumas">Pumas UNAM</button>
+            <button class="tab-button" data-tab="baile">El Baile</button>
+            <button class="tab-button" data-tab="magia">H. Potter</button>
+            <button class="tab-button" data-tab="hawkins">S. Things</button>
+        </nav>
+
+        <main id="presentation-deck">
+            <div class="tab-content active" id="inicio">
+                <div class="card">
+                    <h2>¿Quién soy?</h2>
+                    <p>Mi nombre es <strong>Alejandra Jiménez</strong> (Ale). Nací el 3 de julio de 2008 en la CDMX. Me considero una persona independiente, impulsada por los valores de esfuerzo y dedicación de mis padres, Enrique y Nashiely.</p>
+                </div>
+                <div class="card">
+                    <h2>Trayectoria Académica</h2>
+                    <p>He pasado por la primaria <strong>Sor Juana Inés de la Cruz</strong> y la secundaria 56. Actualmente, curso mis estudios en la <strong>Prepa 115</strong> en el Estado de México, preparándome para nuevos retos.</p>
+                </div>
+                <div class="card">
+                    <h2>Pasiones</h2>
+                    <p>De los 11 a los 15 años el fútbol fue mi mundo, pero a los 15 descubrí mi verdadera vocación: <strong>el baile</strong>. Para mí, bailar es conectar con algo mayor, es libertad pura.</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="pumas">
+                <div class="card">
+                    <h2>🐾 Club Universidad Nacional</h2>
+                    <p>Símbolo de orgullo académico y deportivo desde 1954. Los colores <strong>Azul y Oro</strong> representan la garra de la UNAM.</p>
+                </div>
+                <div class="card">
+                    <h2>Datos Históricos</h2>
+                    <ul>
+                        <li>Localía: Estadio Olímpico Universitario.</li>
+                        <li>Leyendas: Hugo Sánchez, Carlos Hermosillo, Enrique Borja.</li>
+                        <li>Filosofía: Educación, excelencia y pasión.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-content" id="baile">
+                <div class="card">
+                    <h2>💃 El Arte del Movimiento</h2>
+                    <p>El baile requiere disciplina y conexión emocional. He explorado estilos desde el Ballet y Jazz hasta el Hip-Hop y Contemporáneo.</p>
+                </div>
+                <div class="card">
+                    <h2>Presentaciones y Eventos</h2>
+                    <p>Especialmente en eventos de XV años, donde el vals, la bachata y la salsa permiten contar historias a través de la coreografía y el vestuario.</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="magia">
+                <div class="card">
+                    <h2>🪄 El Mundo Mágico</h2>
+                    <p>La saga de J.K. Rowling nos enseña sobre el coraje y el sacrificio. No son nuestras habilidades las que muestran quiénes somos, sino nuestras <strong>elecciones</strong>.</p>
+                </div>
+                <div class="card">
+                    <h2>Hogwarts</h2>
+                    <p>Casas: Gryffindor (Valentía), Hufflepuff (Lealtad), Ravenclaw (Sabiduría) y Slytherin (Ambición).</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="hawkins">
+                <div class="card">
+                    <h2>👹 Hawkins e Indiana</h2>
+                    <p>Una oda a la amistad y a la nostalgia de los 80. La lucha contra el <strong>Mundo del Revés</strong> y criaturas como Vecna o el Demogorgon.</p>
+                </div>
+                <div class="card">
+                    <h2>Temas Centrales</h2>
+                    <ul>
+                        <li>La lealtad incondicional del grupo.</li>
+                        <li>La curiosidad científica frente al misterio.</li>
+                        <li>El poder de la familia.</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // LÓGICA PARA CAMBIAR DE PESTAÑA
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const target = button.getAttribute('data-tab');
+
+                    // Desactivar todo
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    contents.forEach(content => content.classList.remove('active'));
+
+                    // Activar el seleccionado
+                    button.classList.add('active');
+                    document.getElementById(target).classList.add('active');
+                    
+                    // Hacer scroll suave hacia arriba al cambiar
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
